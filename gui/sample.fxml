@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="1154.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controller">
+   <children>
+      <ImageView fitHeight="577.0" fitWidth="1154.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@conveyor-belt-assembly-machine-factory-plant-warehouse-cartoon-interior-workshop-production-line-with-automated-machinery-engineering-equipment-manufactory_107791-3840.jpg" />
+         </image></ImageView>
+      <Pane layoutX="14.0" layoutY="5.0" prefHeight="27.0" prefWidth="310.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutY="1.0" text="Welcome  To Our Factory " textFill="#1f3280">
+               <font>
+                  <Font name="Century Schoolbook Bold Italic" size="20.0" />
+               </font></Label>
+         </children>
+      </Pane>
+      <Pane layoutX="3.0" layoutY="195.0" prefHeight="379.0" prefWidth="1147.0" style="-fx-border-color: black;">
+         <children>
+            <Canvas fx:id="canvas" height="372.0" layoutX="2.0" layoutY="2.0" onMouseClicked="#mouseClicked" onMouseDragged="#mouseMove" onMousePressed="#mousePressed" onMouseReleased="#mouseUp" style="-fx-cursor: crosshair;" width="1140.0" />
+         </children></Pane>
+      <Pane layoutX="976.0" layoutY="5.0" prefHeight="188.0" prefWidth="174.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="13.0" text="Actions">
+               <font>
+                  <Font name="Comic Sans MS Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <Button id="other" fx:id="reset" layoutX="13.0" layoutY="23.0" mnemonicParsing="false" onAction="#clear" prefHeight="27.0" prefWidth="68.0" stylesheets="@css.css" text="Reset" textFill="#830d0d">
+               <font>
+                  <Font name="Century Schoolbook Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button id="other" fx:id="replay" disable="true" layoutX="12.0" layoutY="79.0" mnemonicParsing="false" onAction="#replaySimulation" prefHeight="42.0" prefWidth="151.0" stylesheets="@css.css" text="Replay Simulation" textFill="#830d0d">
+               <font>
+                  <Font name="Century Schoolbook Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button id="other" fx:id="edit" disable="true" layoutX="12.0" layoutY="132.0" mnemonicParsing="false" onAction="#editSimulation" prefHeight="42.0" prefWidth="151.0" stylesheets="@css.css" text="Edit on simulation" textFill="#830d0d">
+               <font>
+                  <Font name="Century Schoolbook Bold Italic" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Button id="other" fx:id="simulate" layoutX="487.0" layoutY="129.0" mnemonicParsing="false" onAction="#startSimulation" prefHeight="28.0" prefWidth="159.0" stylesheets="@css.css" text="Start Simulation" textFill="#830d0d">
+         <font>
+            <Font name="Century Schoolbook Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="19.0" fitWidth="167.0" layoutX="895.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="19.0" fitWidth="97.0" layoutX="895.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@arrow.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="774.0" layoutY="5.0" prefHeight="188.0" prefWidth="114.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="8.0" layoutY="5.0" text="Initial Products">
+               <font>
+                  <Font name="Comic Sans MS Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <ListView fx:id="initialProducts" layoutX="9.0" layoutY="30.0" prefHeight="153.0" prefWidth="96.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="3.0" layoutY="41.0" prefHeight="135.0" prefWidth="343.0" style="-fx-border-color: black;">
+         <children>
+            <Button id="machine" fx:id="circle" layoutX="251.0" layoutY="9.0" mnemonicParsing="false" onAction="#chooseShape" prefHeight="42.0" prefWidth="43.0" stylesheets="@css.css" text="M" />
+            <Button id="queue" fx:id="rectangle" layoutX="113.0" layoutY="9.0" mnemonicParsing="false" onAction="#chooseShape" prefHeight="40.0" prefWidth="80.0" stylesheets="@css.css" text="Queue">
+               <font>
+                  <Font name="Century Schoolbook Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="7.0" layoutY="5.0" prefHeight="25.0" prefWidth="96.0" text="Choose Shape" textFill="#141212">
+               <font>
+                  <Font name="Comic Sans MS Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="210.0" layoutY="18.0" prefHeight="25.0" prefWidth="32.0" text="OR" textFill="#141212">
+               <font>
+                  <Font name="Comic Sans MS Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Button id="other" fx:id="arrow" layoutX="60.0" layoutY="80.0" mnemonicParsing="false" onAction="#selectShape" prefHeight="42.0" prefWidth="114.0" stylesheets="@css.css" text="Draw Arrow" textFill="#830d0d">
+               <font>
+                  <Font name="Century Schoolbook Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="7.0" layoutY="87.0" prefHeight="25.0" prefWidth="61.0" text="Press" textFill="#141212">
+               <font>
+                  <Font name="Comic Sans MS Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="24.0" prefHeight="25.0" prefWidth="61.0" text="to draw" textFill="#141212">
+               <font>
+                  <Font name="Comic Sans MS Bold Italic" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="176.0" layoutY="88.0" prefHeight="25.0" prefWidth="151.0" text="and select TWO shapes" textFill="#141212">
+               <font>
+                  <Font name="Comic Sans MS Bold Italic" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fitHeight="29.0" fitWidth="104.0" layoutX="659.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@arrow.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="354.0" layoutY="41.0" prefHeight="25.0" prefWidth="174.0" text="Enter number of products:" textFill="#141212">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="number" layoutX="528.0" layoutY="41.0" prefHeight="25.0" prefWidth="76.0" promptText="# products" />
+      <ImageView fitHeight="19.0" fitWidth="43.0" layoutX="545.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="29.0" fitWidth="104.0" layoutX="362.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@arrow.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
